@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0"
+            prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.kronosad.modpack.client.MainWindowController">
+    <children>
+        <ImageView fx:id="bg" fitHeight="450.0" fitWidth="800.0" layoutX="8.0" layoutY="6.0" pickOnBounds="true"
+                   preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                   AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <image>
+                <Image url="@../dirt_background.png"/>
+            </image>
+        </ImageView>
+        <AnchorPane fx:id="pageStart" layoutX="206.0" layoutY="150.0" prefHeight="146.0" prefWidth="343.0"
+                    style="-fx-background-color: #d4d4d4; visibility: hidden;">
+            <children>
+                <Label alignment="CENTER" layoutX="82.0" layoutY="14.0" prefHeight="16.0" prefWidth="182.0"
+                       text="Choose a Modpack..." textAlignment="CENTER"/>
+                <Button fx:id="btnUpdatePack" defaultButton="true" layoutX="14.33837890625" layoutY="106.0"
+                        mnemonicParsing="false" text="Update"/>
+                <Button fx:id="btnRemovePack" cancelButton="true" layoutX="264.33837890625" layoutY="106.0"
+                        mnemonicParsing="false" text="Remove"/>
+                <ChoiceBox fx:id="packList" layoutX="12.0" layoutY="47.0" prefHeight="26.0" prefWidth="322.0"/>
+            </children>
+        </AnchorPane>
+        <AnchorPane fx:id="pageNewPack" layoutX="206.0" layoutY="122.0" prefHeight="211.0" prefWidth="343.0"
+                    style="-fx-background-color: #d4d4d4;">
+            <children>
+                <Button defaultButton="true" layoutX="83.0" layoutY="162.0" mnemonicParsing="false" prefHeight="26.0"
+                        prefWidth="182.0" text="Button"/>
+                <Label layoutX="74.0" layoutY="14.0" text="Enter a modpack JSON file or URL!" textAlignment="CENTER"/>
+                <TextField layoutX="31.0" layoutY="60.0" prefHeight="26.0" prefWidth="244.0"/>
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>

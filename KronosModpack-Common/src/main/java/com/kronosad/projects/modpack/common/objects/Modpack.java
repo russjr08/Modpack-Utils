@@ -18,4 +18,23 @@ public class Modpack {
 
     private DistributionType type;
 
+    public double getVersion() {
+        return version;
+    }
+
+    public String getMd5() {
+        return md5;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public List<Mod> getMods() {
+        return mods;
+    }
+
+    public DistributionType getType() {
+        return type;
+    }
 }

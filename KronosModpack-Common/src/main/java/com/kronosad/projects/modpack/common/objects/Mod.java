@@ -10,4 +10,11 @@ public class Mod extends PackFile {
 
     private String author;
 
+    public double getVersion() {
+        return version;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
 }
