@@ -23,4 +23,14 @@ public class PackFile {
     public String getUrl() {
         return url;
     }
+
+    @Override
+    public String toString() {
+        return "PackFile{" +
+                "md5='" + md5 + '\'' +
+                ", name='" + name + '\'' +
+                ", path='" + path + '\'' +
+                ", url='" + url + '\'' +
+                '}';
+    }
 }

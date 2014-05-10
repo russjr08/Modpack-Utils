@@ -17,4 +17,12 @@ public class Mod extends PackFile {
     public String getAuthor() {
         return author;
     }
+
+    @Override
+    public String toString() {
+        return "Mod{" +
+                "version=" + version +
+                ", author='" + author + '\'' +
+                '}';
+    }
 }

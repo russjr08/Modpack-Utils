@@ -41,4 +41,16 @@ public class Modpack {
     public DistributionType getType() {
         return type;
     }
+
+    @Override
+    public String toString() {
+        return "Modpack{" +
+                "version=" + version +
+                ", md5='" + md5 + '\'' +
+                ", name='" + name + '\'' +
+                ", forgeVersion='" + forgeVersion + '\'' +
+                ", mods=" + mods +
+                ", type=" + type +
+                '}';
+    }
 }

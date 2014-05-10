@@ -1,5 +1,7 @@
 package com.kronosad.modpack.client;
 
+import com.google.gson.Gson;
+import com.kronosad.projects.modpack.common.objects.Modpack;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -123,7 +125,20 @@ public class MainWindowController implements Initializable {
                     // Internet location
                     try {
                         InputStream in = new URL(txtPackLocation.getText()).openStream();
-                        System.out.println(IOUtils.toString(in));
+                        String textFromInternet = IOUtils.toString(in);
+                        System.out.println(textFromInternet);
+
+                        try {
+                            Modpack pack = new Gson().fromJson(textFromInternet, Modpack.class);
+                            System.out.println(pack.toString());
+                            if (pack.getMods() == null) {
+                                throw new IllegalArgumentException("The Mods list is empty, this Modpack file is inavlid.");
+                            }
+                        } catch (Exception e) {
+                            ErrorWindowController.openError().constructError("Invalid Modpack Found",
+                                    "The downloaded Modpack file is malformed / is not constructed properly!");
+                            e.printStackTrace();
+                        }
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
