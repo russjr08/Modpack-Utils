@@ -13,8 +13,11 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
 import javafx.stage.FileChooser;
+import org.apache.commons.io.IOUtils;
 
 import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -114,6 +117,18 @@ public class MainWindowController implements Initializable {
             @Override
             public void handle(ActionEvent event) {
                 // TODO: Things... Magic internet/file things.
+
+                // Yeah yeah.. I know this is a little sketchy. Have a better way? Submit a PR.
+                if (txtPackLocation.getText().startsWith("http") || txtPackLocation.getText().startsWith("www")) {
+                    // Internet location
+                    try {
+                        InputStream in = new URL(txtPackLocation.getText()).openStream();
+                        System.out.println(IOUtils.toString(in));
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+
+                }
 
                 pageStart.setVisible(true);
                 pageNewPack.setVisible(false);
