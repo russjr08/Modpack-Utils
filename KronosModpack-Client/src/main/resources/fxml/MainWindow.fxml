@@ -28,13 +28,28 @@
                 <ChoiceBox fx:id="packList" layoutX="12.0" layoutY="47.0" prefHeight="26.0" prefWidth="322.0"/>
             </children>
         </AnchorPane>
-        <AnchorPane fx:id="pageNewPack" layoutX="206.0" layoutY="122.0" prefHeight="211.0" prefWidth="343.0"
+        <AnchorPane fx:id="pageNewPack" layoutX="206.0" layoutY="148.0" prefHeight="179.0" prefWidth="343.0"
                     style="-fx-background-color: #d4d4d4;">
             <children>
-                <Button defaultButton="true" layoutX="83.0" layoutY="162.0" mnemonicParsing="false" prefHeight="26.0"
-                        prefWidth="182.0" text="Button"/>
-                <Label layoutX="74.0" layoutY="14.0" text="Enter a modpack JSON file or URL!" textAlignment="CENTER"/>
-                <TextField layoutX="31.0" layoutY="60.0" prefHeight="26.0" prefWidth="244.0"/>
+                <Button fx:id="btnAddPack" defaultButton="true" layoutX="17.0" layoutY="136.0" mnemonicParsing="false"
+                        prefHeight="26.0" prefWidth="115.0" text="Add Pack"/>
+                <Label layoutX="74.0" layoutY="20.0" text="Enter a modpack JSON file or URL!" textAlignment="CENTER"/>
+                <TextField fx:id="txtPackLocation" layoutX="14.0" layoutY="78.0" prefHeight="26.0" prefWidth="244.0"/>
+                <Button fx:id="btnFile" layoutX="265.207763671875" layoutY="78.5" mnemonicParsing="false"
+                        text="Pick File"/>
+                <Label layoutX="52.595947265625" layoutY="48.5" text="(This file or URL will usually end with .json)"/>
+                <Button fx:id="btnCancel" cancelButton="true" layoutX="225.0" layoutY="137.0" mnemonicParsing="false"
+                        prefHeight="25.0" prefWidth="89.0" text="Cancel"/>
+            </children>
+        </AnchorPane>
+        <AnchorPane fx:id="pageDownload" layoutX="206.0" layoutY="178.0" prefHeight="123.0" prefWidth="343.0"
+                    style="-fx-background-color: #d4d4d4;" visible="false">
+            <children>
+                <Label fx:id="lblPack" alignment="CENTER" layoutX="67.0" layoutY="14.0" prefHeight="15.0"
+                       prefWidth="197.0" text="Downloading %pack%" textAlignment="CENTER"/>
+                <Label fx:id="lblFile" alignment="CENTER" layoutX="108.0" layoutY="41.0" text="Current File: %file%"/>
+                <ProgressIndicator fx:id="downloadProgress" layoutX="149.9609375" layoutY="66.23828125"
+                                   progress="0.75"/>
             </children>
         </AnchorPane>
     </children>

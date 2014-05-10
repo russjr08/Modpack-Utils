@@ -12,7 +12,7 @@ public class Modpack {
 
     private double version;
 
-    private String md5, name;
+    private String md5, name, forgeVersion;
 
     private List<Mod> mods;
 
@@ -28,6 +28,10 @@ public class Modpack {
 
     public String getName() {
         return name;
+    }
+
+    public String getForgeVersion() {
+        return forgeVersion;
     }
 
     public List<Mod> getMods() {

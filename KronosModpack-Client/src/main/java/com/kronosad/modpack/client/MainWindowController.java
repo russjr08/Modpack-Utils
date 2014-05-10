@@ -6,14 +6,15 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.*;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
+import javafx.stage.FileChooser;
 
+import java.io.File;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -27,19 +28,32 @@ public class MainWindowController implements Initializable {
 
     // Start Page
     @FXML
-    AnchorPane pageStart;
+    private AnchorPane pageStart;
     @FXML
-    ChoiceBox<String> packList;
+    private ChoiceBox<String> packList;
     @FXML
-    Button btnUpdatePack, btnRemovePack;
+    private Button btnUpdatePack, btnRemovePack;
 
     // New Pack Page
     @FXML
-    AnchorPane pageNewPack;
+    private AnchorPane pageNewPack;
+    @FXML
+    private Button btnFile, btnAddPack, btnCancel;
+    @FXML
+    private TextField txtPackLocation;
 
+    // Download Page
+    @FXML
+    private Label lblPack, lblFile;
+    @FXML
+    private ProgressIndicator progressIndicator;
 
-    final String PANEL_BG_COLOR = "-fx-background-color: #d4d4d4; ";
+    // Constants
     final String NEW_PACK_TEXT = "Add a New Pack...";
+
+
+    private ObservableList<String> packs = FXCollections.observableArrayList();
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -49,20 +63,66 @@ public class MainWindowController implements Initializable {
 
         pageStart.setEffect(new DropShadow(15.0, Color.BLACK));
 
-        ObservableList<String> packs = FXCollections.observableArrayList();
         packs.add(NEW_PACK_TEXT);
 
         packList.setItems(packs);
         packList.getSelectionModel().selectFirst();
 
+        // Main (Start) page buttons
         btnUpdatePack.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
-                if (packList.getValue().equalsIgnoreCase(NEW_PACK_TEXT)) {
+                if (packList.getValue().equals(NEW_PACK_TEXT)) {
                     pageNewPack.setVisible(true);
                 }
             }
         });
+
+        btnRemovePack.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                if (!packList.getValue().equals(NEW_PACK_TEXT)) {
+                    packs.removeAll(packList.getValue());
+
+                    // TODO: Also remove Modpack from hard drive.
+                }
+            }
+        });
+
+
+        btnFile.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                FileChooser chooser = new FileChooser();
+                chooser.setTitle("Pick a local modpack JSON file...");
+                File file = chooser.showOpenDialog(null);
+                txtPackLocation.setText(file.getAbsolutePath());
+
+            }
+        });
+
+        // Add Pack Page buttons
+        btnCancel.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                pageNewPack.setVisible(false);
+                pageStart.setVisible(true);
+            }
+        });
+
+        btnAddPack.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                // TODO: Things... Magic internet/file things.
+
+                pageStart.setVisible(true);
+                pageNewPack.setVisible(false);
+
+                // TODO: Add new pack to the dropdown here.
+            }
+        });
+
+        // Download page logic (if any?)
 
     }
 }
