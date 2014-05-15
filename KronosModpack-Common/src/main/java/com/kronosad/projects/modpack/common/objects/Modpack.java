@@ -42,6 +42,31 @@ public class Modpack {
         return type;
     }
 
+
+    public void setVersion(double version) {
+        this.version = version;
+    }
+
+    public void setMd5(String md5) {
+        this.md5 = md5;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setForgeVersion(String forgeVersion) {
+        this.forgeVersion = forgeVersion;
+    }
+
+    public void setMods(List<Mod> mods) {
+        this.mods = mods;
+    }
+
+    public void setType(DistributionType type) {
+        this.type = type;
+    }
+
     @Override
     public String toString() {
         return "Modpack{" +

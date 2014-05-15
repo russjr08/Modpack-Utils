@@ -18,6 +18,14 @@ public class Mod extends PackFile {
         return author;
     }
 
+    public void setVersion(double version) {
+        this.version = version;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
     @Override
     public String toString() {
         return "Mod{" +

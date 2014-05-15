@@ -24,6 +24,22 @@ public class PackFile {
         return url;
     }
 
+    public void setMd5(String md5) {
+        this.md5 = md5;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setPath(String path) {
+        this.path = path;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
     @Override
     public String toString() {
         return "PackFile{" +
