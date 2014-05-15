@@ -2,16 +2,11 @@ package com.kronosad.modpack.client;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.kronosad.projects.modpack.common.objects.mclauncher.Profile;
-import com.kronosad.projects.modpack.common.objects.util.LauncherUtils;
-import com.kronosad.projects.modpack.common.objects.util.OperatingSystem;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-
-import java.io.File;
 
 /**
  * Author russjr08
@@ -36,14 +31,6 @@ public class Main extends Application {
         stage.setScene(scene);
         stage.show();
 
-
-        Profile profile = new Profile();
-        profile.setName("TMPI");
-        profile.setGameDir(OperatingSystem.getCurrentOperatingSystem().getModpacksFolder().getAbsolutePath() + File.separator + "TMPI");
-        profile.setLastVersionId("1.7.2-Forge10.12.1.1075");
-        profile.setLauncherVisibilityOnGameClose("keep the launcher open");
-
-        LauncherUtils.addProfileToLauncher(profile);
 
     }
 }
