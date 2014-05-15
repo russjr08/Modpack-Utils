@@ -2,22 +2,24 @@ package com.kronosad.modpack.client;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.kronosad.projects.modpack.common.objects.Mod;
-import com.kronosad.projects.modpack.common.objects.Modpack;
-import com.kronosad.projects.modpack.common.objects.enums.DistributionType;
+import com.kronosad.projects.modpack.common.objects.mclauncher.Profile;
+import com.kronosad.projects.modpack.common.objects.util.LauncherUtils;
+import com.kronosad.projects.modpack.common.objects.util.OperatingSystem;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-import java.util.Arrays;
+import java.io.File;
 
 /**
  * Author russjr08
  * Created at 5/8/14
  */
 public class Main extends Application {
+    public static Gson gson = new GsonBuilder().setPrettyPrinting().create();
+
 
     public static void main(String... args) {
         launch(args);
@@ -34,26 +36,14 @@ public class Main extends Application {
         stage.setScene(scene);
         stage.show();
 
-        Modpack pack = new Modpack();
-        pack.setType(DistributionType.INDIVIDUAL_FILES);
 
-        pack.setForgeVersion("1.7.2");
-        pack.setMd5("IM AN MD5");
-        pack.setName("Testing pack pls ignore");
-        pack.setVersion(1.0);
+        Profile profile = new Profile();
+        profile.setName("TMPI");
+        profile.setGameDir(OperatingSystem.getCurrentOperatingSystem().getModpacksFolder().getAbsolutePath() + File.separator + "TMPI");
+        profile.setLastVersionId("1.7.2-Forge10.12.1.1075");
+        profile.setLauncherVisibilityOnGameClose("keep the launcher open");
 
-        Mod testMod = new Mod();
-        testMod.setVersion(1.0);
-        testMod.setMd5("IM AN MD5 AGAIN");
-        testMod.setName("Test mod pls ignore");
-        testMod.setAuthor("Roosall Rikardsun");
-        testMod.setPath("mods/TestModPlsIgnore.jar");
-        testMod.setUrl("http://gofuckyourself.tristen.io/TMPI.jar");
-
-        pack.setMods(Arrays.asList(testMod));
-
-        Gson gson = new GsonBuilder().setPrettyPrinting().create();
-        System.out.println(gson.toJson(pack));
+        LauncherUtils.addProfileToLauncher(profile);
 
     }
 }
