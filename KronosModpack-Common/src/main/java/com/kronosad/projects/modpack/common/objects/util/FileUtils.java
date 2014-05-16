@@ -1,7 +1,6 @@
-package com.kronosad.projects.modpack.common.objects.com.kronosad.projects.modpack.common.util;
+package com.kronosad.projects.modpack.common.objects.util;
 
 
-import com.kronosad.projects.modpack.common.objects.PackFile;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.commons.io.IOUtils;
 
@@ -15,10 +14,10 @@ import java.io.IOException;
  */
 public class FileUtils {
 
-    public static boolean md5Match(PackFile file, String md5) {
+    public static boolean md5Match(File file, String md5) {
 
         try {
-            return md5.equals(DigestUtils.md5Hex(IOUtils.toByteArray(new FileInputStream(new File(file.getPath() + File.separator + file.getName())))));
+            return md5.equals(DigestUtils.md5Hex(IOUtils.toByteArray(new FileInputStream(file))));
         } catch (IOException e) {
             e.printStackTrace();
         }

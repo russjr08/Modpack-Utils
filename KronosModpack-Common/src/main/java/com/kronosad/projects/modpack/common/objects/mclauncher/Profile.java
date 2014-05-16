@@ -6,7 +6,7 @@ package com.kronosad.projects.modpack.common.objects.mclauncher;
  */
 public class Profile {
 
-    String name, gameDir, lastVersionId, playerUUID, launcherVisibilityOnGameClose;
+    String name, gameDir, lastVersionId, playerUUID, launcherVisibilityOnGameClose, javaArgs;
 
     public String getName() {
         return name;
@@ -38,6 +38,14 @@ public class Profile {
 
     public void setLauncherVisibilityOnGameClose(String launcherVisibilityOnGameClose) {
         this.launcherVisibilityOnGameClose = launcherVisibilityOnGameClose;
+    }
+
+    public String getJavaArgs() {
+        return javaArgs;
+    }
+
+    public void setJavaArgs(String javaArgs) {
+        this.javaArgs = javaArgs;
     }
 
     @Override

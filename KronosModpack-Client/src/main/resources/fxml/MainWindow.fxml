@@ -17,7 +17,7 @@
             </image>
         </ImageView>
         <AnchorPane fx:id="pageStart" layoutX="206.0" layoutY="150.0" prefHeight="146.0" prefWidth="343.0"
-                    style="-fx-background-color: #d4d4d4; visibility: hidden;">
+                    style="-fx-background-color: #d4d4d4;">
             <children>
                 <Label alignment="CENTER" layoutX="82.0" layoutY="14.0" prefHeight="16.0" prefWidth="182.0"
                        text="Choose a Modpack..." textAlignment="CENTER"/>
@@ -29,7 +29,7 @@
             </children>
         </AnchorPane>
         <AnchorPane fx:id="pageNewPack" layoutX="206.0" layoutY="148.0" prefHeight="179.0" prefWidth="343.0"
-                    style="-fx-background-color: #d4d4d4;">
+                    style="-fx-background-color: #d4d4d4;" visible="false">
             <children>
                 <Button fx:id="btnAddPack" defaultButton="true" layoutX="17.0" layoutY="136.0" mnemonicParsing="false"
                         prefHeight="26.0" prefWidth="115.0" text="Add Pack"/>
@@ -45,11 +45,11 @@
         <AnchorPane fx:id="pageDownload" layoutX="206.0" layoutY="178.0" prefHeight="123.0" prefWidth="343.0"
                     style="-fx-background-color: #d4d4d4;" visible="false">
             <children>
-                <Label fx:id="lblPack" alignment="CENTER" layoutX="67.0" layoutY="14.0" prefHeight="15.0"
-                       prefWidth="197.0" text="Downloading %pack%" textAlignment="CENTER"/>
+                <Label fx:id="lblPack" alignment="CENTER" layoutX="7.0" layoutY="14.0" prefHeight="16.0"
+                       prefWidth="322.0" text="Downloading %pack%" textAlignment="CENTER"/>
                 <Label fx:id="lblFile" alignment="CENTER" layoutX="108.0" layoutY="41.0" text="Current File: %file%"/>
-                <ProgressIndicator fx:id="downloadProgress" layoutX="149.9609375" layoutY="66.23828125"
-                                   progress="0.75"/>
+                <ProgressIndicator fx:id="progressIndicator" layoutX="148.0" layoutY="66.0" prefHeight="43.0"
+                                   prefWidth="39.0"/>
             </children>
         </AnchorPane>
     </children>

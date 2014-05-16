@@ -1,7 +1,12 @@
 package com.kronosad.projects.modpack.common.objects;
 
+import com.google.gson.Gson;
 import com.kronosad.projects.modpack.common.objects.enums.DistributionType;
+import org.apache.commons.io.IOUtils;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.URL;
 import java.util.List;
 
 /**
@@ -12,9 +17,9 @@ public class Modpack {
 
     private double version;
 
-    private String md5, name, forgeVersion;
+    private String md5, name, forgeVersion, internetURL;
 
-    private List<Mod> mods;
+    private List<PackFile> files;
 
     private DistributionType type;
 
@@ -34,12 +39,16 @@ public class Modpack {
         return forgeVersion;
     }
 
-    public List<Mod> getMods() {
-        return mods;
+    public List<PackFile> getFiles() {
+        return files;
     }
 
     public DistributionType getType() {
         return type;
+    }
+
+    public String getInternetURL() {
+        return internetURL;
     }
 
 
@@ -59,12 +68,24 @@ public class Modpack {
         this.forgeVersion = forgeVersion;
     }
 
-    public void setMods(List<Mod> mods) {
-        this.mods = mods;
+    public void setFiles(List<PackFile> files) {
+        this.files = files;
     }
 
     public void setType(DistributionType type) {
         this.type = type;
+    }
+
+    public void setInternetURL(String internetURL) {
+        this.internetURL = internetURL;
+    }
+
+
+    public static Modpack getModpackFromInternet(String url) throws IOException {
+        InputStream in = new URL(url).openStream();
+        String textFromInternet = IOUtils.toString(in);
+
+        return new Gson().fromJson(textFromInternet, Modpack.class);
     }
 
     @Override
@@ -74,7 +95,7 @@ public class Modpack {
                 ", md5='" + md5 + '\'' +
                 ", name='" + name + '\'' +
                 ", forgeVersion='" + forgeVersion + '\'' +
-                ", mods=" + mods +
+                ", files=" + files +
                 ", type=" + type +
                 '}';
     }
