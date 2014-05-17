@@ -1,4 +1,4 @@
-KronosModpack (Also known Modpack Utilities)
+Modpack Utilities (Also known KronosModpack)
 =============================================
 
 Modpack Utilities is a nifty way of distributing Modpacks with your friends
@@ -8,7 +8,7 @@ Modpack Utilities is a nifty way of distributing Modpacks with your friends
 
 For Users
 ----------
-1. Obtain a Modpack JSON file from your Modpack developer/maintainer and input into the app.
+1. Obtain a Modpack JSON file from your Modpack developer/maintainer and input it into the app.
 2. Click 'Update'.
 3. *Profit*
 
