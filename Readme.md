@@ -60,4 +60,5 @@ Creating JSON Files for Modpack Utilities is very simple! An example Modpack JSO
 *files*: An array of 'files', each 'file' has a version (Optional / Not used yet), an Author (Optional/Not used yet), an MD5 Checksum of the file (This **_Important_**, as Modpack Utilities verifies the checksum of the file, and will attempt to redownload it if it doesn't match.), a name which appears in the Downloading GUI, a path, which is where the file will be installed (And the file name of the resulting file), and finally a URL to download the file from.
 
 If you're feeling lucky, (or lazy ;D ) [you can try out the Modpack Creator utility (VERY BETA)](http://www.google.com) (Link needs to be changed)
-[Here are some instructions if you're up to the challenge!](http://google.com)
+
+[Here are some instructions if you're up to the challenge!](http://git.kronosad.com/russjr08/kronosmodpack/raw/master/doc/ModpackCreator.md)
