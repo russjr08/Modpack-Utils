@@ -92,6 +92,9 @@ public class MainWindowController implements Initializable {
         btnUpdatePack.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
+                if(packList.getValue() == null){
+                    return;
+                }
                 if (packList.getValue().equals(NEW_PACK_TEXT)) {
                     pageNewPack.setVisible(true);
                 } else {
@@ -176,13 +179,6 @@ public class MainWindowController implements Initializable {
                                         pageDownload.setVisible(false);
                                     }
                                 });
-
-                                try {
-                                    Process myProcess = new ProcessBuilder("java", "-jar " + OperatingSystem.getCurrentOperatingSystem().getMinecraftFolder().getAbsolutePath() + File.separator + "launcher.jar").start();
-                                } catch (Exception e) {
-                                    e.printStackTrace();
-                                }
-
 
                             }
                         }).start();
