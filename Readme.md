@@ -49,10 +49,15 @@ Creating JSON Files for Modpack Utilities is very simple! An example Modpack JSO
 ```
 
 #### JSON Keys
-version: Pretty self explanatory here, the version of the Modpack. (Optional/Not used yet)
-md5: MD5 of the Modpack folder itself (Optinoal/Not used yet)
-name: Name of the Modpack. (Appears in Modpack Utilities' Menu, also the name of the folder/launcher profile it creates
-files: An array of 'files', each 'file' has a version (Optional / Not used yet), an Author (Optional/Not used yet), an MD5 Checksum of the file (This **_Important_**, as Modpack Utilities verifies the checksum of the file, and will attempt to redownload it if it doesn't match.), a name which appears in the Downloading GUI, a path, which is where the file will be installed (And the file name of the resulting file), and finally a URL to download the file from.
+*version*: Pretty self explanatory here, the version of the Modpack. (Optional/Not used yet)
+
+*md5*: MD5 of the Modpack folder itself (Optinoal/Not used yet)
+
+*name*: Name of the Modpack. (Appears in Modpack Utilities' Menu, also the name of the folder/launcher profile it creates
+
+*forgeVersion*: The version of Forge (Can any "version" installed in the Minecraft launcher) that Modpack Utilities will try to set the respective Launcher Profile to use.
+
+*files*: An array of 'files', each 'file' has a version (Optional / Not used yet), an Author (Optional/Not used yet), an MD5 Checksum of the file (This **_Important_**, as Modpack Utilities verifies the checksum of the file, and will attempt to redownload it if it doesn't match.), a name which appears in the Downloading GUI, a path, which is where the file will be installed (And the file name of the resulting file), and finally a URL to download the file from.
 
 If you're feeling lucky, (or lazy ;D ) [you can try out the Modpack Creator utility (VERY BETA)](http://www.google.com) (Link needs to be changed)
 [Here are some instructions if you're up to the challenge!](http://google.com)
