@@ -23,11 +23,11 @@
         <AnchorPane fx:id="pageNewPack" layoutX="229.0" layoutY="136.0" prefHeight="179.0" prefWidth="343.0" style="-fx-background-color: #d4d4d4;" visible="false">
             <children>
                 <Button fx:id="btnAddPack" defaultButton="true" layoutX="17.0" layoutY="136.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="115.0" text="Add Pack" />
-                <Label layoutX="74.0" layoutY="20.0" text="Enter a modpack JSON file or URL!" textAlignment="CENTER" />
-                <TextField fx:id="txtPackLocation" layoutX="14.0" layoutY="78.0" prefHeight="26.0" prefWidth="244.0" />
-                <Button fx:id="btnFile" layoutX="265.207763671875" layoutY="78.5" mnemonicParsing="false" text="Pick File" />
-                <Label layoutX="52.595947265625" layoutY="48.5" text="(This file or URL will usually end with .json)" />
-                <Button fx:id="btnCancel" cancelButton="true" layoutX="225.0" layoutY="137.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="89.0" text="Cancel" />
+                <Label layoutX="58.0" layoutY="20.0" text="Enter a modpack JSON file or URL!" textAlignment="CENTER" />
+                <TextField fx:id="txtPackLocation" layoutX="14.0" layoutY="78.0" prefHeight="31.0" prefWidth="229.0" />
+                <Button fx:id="btnFile" layoutX="248.0" layoutY="78.0" mnemonicParsing="false" text="Pick File" />
+                <Label layoutX="32.0" layoutY="41.0" text="(This file or URL will usually end with .json)" />
+                <Button fx:id="btnCancel" cancelButton="true" layoutX="240.0" layoutY="136.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="89.0" text="Cancel" />
             </children>
         </AnchorPane>
         <AnchorPane fx:id="pageDownload" layoutX="229.0" layoutY="165.0" prefHeight="123.0" prefWidth="343.0" style="-fx-background-color: #d4d4d4;" visible="false">
