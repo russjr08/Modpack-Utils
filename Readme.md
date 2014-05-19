@@ -10,7 +10,8 @@ For Users
 ----------
 1. Obtain a Modpack JSON file from your Modpack developer/maintainer and input it into the app.
 2. Click 'Update'.
-3. *Profit*
+3. ???
+4. *Profit*
 
 
 * *If you don't have the required version of Minecraft Forge, Modpack Utilities will prompt you to download the right version.*
