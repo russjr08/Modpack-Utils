@@ -15,8 +15,8 @@
         <AnchorPane fx:id="pageStart" layoutX="229.0" layoutY="152.0" prefHeight="146.0" prefWidth="343.0" style="-fx-background-color: #d4d4d4;">
         <children>
                 <Label alignment="CENTER" layoutX="82.0" layoutY="14.0" prefHeight="16.0" prefWidth="182.0" text="Choose a Modpack..." textAlignment="CENTER" />
-                <Button fx:id="btnUpdatePack" defaultButton="true" layoutX="14.33837890625" layoutY="106.0" mnemonicParsing="false" text="Update" />
-                <Button fx:id="btnRemovePack" cancelButton="true" layoutX="264.33837890625" layoutY="106.0" mnemonicParsing="false" text="Remove" />
+                <Button fx:id="btnUpdatePack" defaultButton="true" layoutX="14.0" layoutY="106.0" mnemonicParsing="false" text="Update" />
+                <Button fx:id="btnRemovePack" cancelButton="true" layoutX="255.0" layoutY="106.0" mnemonicParsing="false" text="Remove" />
                 <ChoiceBox fx:id="packList" layoutX="12.0" layoutY="47.0" prefHeight="26.0" prefWidth="322.0" />
             </children>
         </AnchorPane>
