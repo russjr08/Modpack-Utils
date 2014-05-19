@@ -12,8 +12,9 @@
                 <Image url="@../dirt_background.png" />
             </image>
         </ImageView>
-        <AnchorPane fx:id="pageStart" layoutX="206.0" layoutY="150.0" prefHeight="146.0" prefWidth="343.0" style="-fx-background-color: #d4d4d4;" visible="false">
-            <children>
+        <AnchorPane fx:id="pageStart" layoutX="206.0" layoutY="150.0" prefHeight="146.0" prefWidth="343.0"
+                    style="-fx-background-color: #d4d4d4;">
+        <children>
                 <Label alignment="CENTER" layoutX="82.0" layoutY="14.0" prefHeight="16.0" prefWidth="182.0" text="Choose a Modpack..." textAlignment="CENTER" />
                 <Button fx:id="btnUpdatePack" defaultButton="true" layoutX="14.33837890625" layoutY="106.0" mnemonicParsing="false" text="Update" />
                 <Button fx:id="btnRemovePack" cancelButton="true" layoutX="264.33837890625" layoutY="106.0" mnemonicParsing="false" text="Remove" />
@@ -30,8 +31,9 @@
                 <Button fx:id="btnCancel" cancelButton="true" layoutX="225.0" layoutY="137.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="89.0" text="Cancel" />
             </children>
         </AnchorPane>
-        <AnchorPane fx:id="pageDownload" layoutX="206.0" layoutY="178.0" prefHeight="123.0" prefWidth="343.0" style="-fx-background-color: #d4d4d4;">
-            <children>
+        <AnchorPane fx:id="pageDownload" layoutX="206.0" layoutY="178.0" prefHeight="123.0" prefWidth="343.0"
+                    style="-fx-background-color: #d4d4d4;" visible="false">
+        <children>
                 <Label fx:id="lblPack" alignment="CENTER" layoutX="7.0" layoutY="14.0" prefHeight="16.0" prefWidth="322.0" text="Downloading %pack%" textAlignment="CENTER" />
                 <Label fx:id="lblFile" alignment="CENTER" layoutX="5.0" layoutY="41.0" prefHeight="16.0" prefWidth="329.0" text="Current File: %file%" />
                 <ProgressIndicator fx:id="progressIndicator" layoutX="148.0" layoutY="66.0" prefHeight="43.0" prefWidth="39.0" />

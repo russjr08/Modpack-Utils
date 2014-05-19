@@ -49,7 +49,7 @@ class Windows extends OperatingSystem {
 
     @Override
     public File getMinecraftFolder() {
-        return new File(System.getProperty("user.home"), ".minecraft");
+        return new File(System.getProperty("user.home"), "AppData" + File.separator + "Roaming" + File.separator + ".minecraft");
     }
 
 }
