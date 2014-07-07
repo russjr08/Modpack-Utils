@@ -64,4 +64,4 @@ Creating JSON Files for Modpack Utilities is very simple! An example Modpack JSO
 
 If you're feeling lucky, (or lazy ;D ) [you can try out the Modpack Creator utility (VERY BETA)](http://www.google.com) (Link needs to be changed)
 
-[Here are some instructions if you're up to the challenge!](http://git.kronosad.com/russjr08/kronosmodpack/blob/master/doc/ModpackCreator.md)
+[Here are some instructions if you're up to the challenge!](doc/ModpackCreator.md)
